@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
-  "main": "build/core/main.js",
+  "main": "build/main.js",
   "dependencies": {
     "@chakra-ui/react": "^2.4.2",
     "@emotion/react": "^11.10.5",
@@ -28,7 +28,6 @@
     "build:web": "react-scripts build",
     "build:desktop": "tsc -p core/tsconfig.json",
     "start:desktop": "npm run build:desktop && electron build/main.js",
-    "start": "npm run build:web && npm run start:desktop",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

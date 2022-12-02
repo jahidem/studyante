@@ -25,7 +25,8 @@ export default class Main {
       },
     });
     if (Main.mainWindow != null) {
-      Main.mainWindow.loadURL("file://" + __dirname + "/index.html");
+      // Main.mainWindow.loadURL("file://" + __dirname + "/index.html");
+      Main.mainWindow.loadURL("http://localhost:3000/");
       Main.mainWindow.on("closed", Main.onClose);
     }
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Table,
   Thead,
@@ -17,22 +17,26 @@ function App() {
     LOADING,
     LOADED,
   }
-  const [load,setLoad] = useState<loadState>(loadState.NULL)
+  const [load, setLoad] = useState<loadState>(loadState.NULL);
 
-  useEffect(() => {
-    if(load == loadState.LOADING){
-      console.log(window.api.getMain)
-    }
-  },[load]);
+  // useEffect(()=>{
+  //   if (load == loadState.LOADING) {
+  //     window.api.getStudentList().then(
+  //       (res) =>{
+  //         console.log(res);
+  //         setLoad(loadState.LOADED)
+  //       }
+  //     );
+  //   }
+  // }, [load]);
 
   return (
     <>
       <Button
-       isLoading = {load == loadState.LOADING}
-       onClick={()=> setLoad(loadState.LOADING)}
-      >{
-        window.api.getMain
-      }
+        isLoading={load == loadState.LOADING}
+        onClick={() => setLoad(loadState.LOADING)}
+      >
+        {window.api.getMain}
       </Button>
       <TableContainer>
         <Table variant="striped" colorScheme="teal">

@@ -4,8 +4,7 @@ import channels from "./utils/constant"
 
 Main.main(app, BrowserWindow);
 
-ipcMain.handle("MAIN",
-  (event, agrs) =>{
-    return "hi"
-  }  
-)
+
+ipcMain.handle(channels.GET_STUDENT_LIST, async (event) => {
+  return "foo";
+})
