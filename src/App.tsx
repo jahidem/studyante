@@ -34,7 +34,13 @@ function App() {
     <>
       <Button
         isLoading={load == loadState.LOADING}
-        onClick={() => setLoad(loadState.LOADING)}
+        onClick={() => {
+          window.api.addUser({
+            ide: 1,
+            email: "JAhid",
+            name: "sdg",
+          });
+        }}
       >
         {window.api.getMain}
       </Button>

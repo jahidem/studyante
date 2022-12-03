@@ -8,6 +8,7 @@
     "@chakra-ui/react": "^2.4.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@prisma/client": "^4.7.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -28,6 +29,8 @@
     "build:web": "react-scripts build",
     "build:desktop": "tsc -p core/tsconfig.json",
     "start:desktop": "npm run build:desktop && electron build/main.js",
+    "migrate": "cd core && npx prisma migrate dev --name init",
+    "studio": "cd core && npx prisma studio",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,7 +54,7 @@
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
-    "electron": "^22.0.0"
+    "electron": "^22.0.0",
+    "prisma": "^4.7.1"
   }
-  
 }
