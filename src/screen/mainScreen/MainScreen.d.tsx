@@ -5,7 +5,8 @@ export interface Api {
   addStudent: (data:Student) => Promise<Student>
   addUser: (data:User) => Promise<void>,
   findAllStudent: ()=> Promise<Array<Student>>,
-  deleteStudent: (data: Student) => Promise<void>
+  deleteStudent: (data: Student) => Promise<void>,
+  printWebContent: ()=>void
 }
 
 declare global {

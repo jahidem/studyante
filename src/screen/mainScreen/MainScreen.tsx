@@ -112,7 +112,12 @@ const MainScreen = () => {
             >
               {docState == DocumentState.VIEW ? "Edit" : "View"}
             </Button>
-            <Button mx="1rem" colorScheme="gray" variant="outline">
+            <Button
+              mx="1rem"
+              colorScheme="gray"
+              variant="outline"
+              onClick={() => window.api.printWebContent()}
+            >
               Print
             </Button>
           </Box>

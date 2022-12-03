@@ -10,4 +10,5 @@ contextBridge.exposeInMainWorld("api", {
   addStudent: (data: Student): Promise<Student> => ipcRenderer.invoke("ADD_STUDENT",data),
   findAllStudent: () => ipcRenderer.invoke("FIND_ALL_STUDENT"),
   deleteStudent: (data: Student) => ipcRenderer.invoke("DELETE_STUDENT", data),
+  printWebContent: () => ipcRenderer.invoke("PRINT_WEB_CONTENT")
 });
