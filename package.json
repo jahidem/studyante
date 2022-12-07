@@ -1,5 +1,6 @@
 {
   "name": "studyante",
+  "productName": "Studyante",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
@@ -57,5 +58,22 @@
     "@types/electron": "^1.6.10",
     "electron": "^22.0.0",
     "prisma": "^4.7.1"
+  },
+  "build": {
+    "appId": "studyante",
+    "win": {
+      "target": "NSIS",
+      "icon": "./core/extraResources/icona.jpg"
+    },
+    "extraResources": [
+      "core/prisma/**/*",
+      "node_modules/.prisma/**/*",
+      "node_modules/@prisma/client/**/*"
+    ],
+    "extraMetadata": {
+      "main": "build/main.js"
+    }
+   
   }
+
 }

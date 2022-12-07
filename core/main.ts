@@ -11,7 +11,25 @@ import prisma from "./lib/db";
 import fs = require("fs");
 import path = require("path");
 import os = require("os");
-import PDFWindow = require('electron-pdf-window');
+import PDFWindow = require("electron-pdf-window");
+import * as dotenv from 'dotenv'
+
+
+// /*Wiring up for DB */
+// const dbPath = path.join(app.getPath("userData"), "sqlite.db")
+
+dotenv.config() // Load the environment variables
+process.env.DATABASE_URL = "file:./sqlite.db"//"file:"+dbPath
+// console.log(`The connection URL is ${process.env.DATABASE_URL}`)
+
+
+
+
+
+
+
+
+
 
 Main.main(app, BrowserWindow);
 
@@ -64,10 +82,10 @@ ipcMain.handle("PRINT_WEB_CONTENT", (event) => {
         console.log(`Wrote PDF successfully to ${pdfPath}`);
         const win = new PDFWindow({
           width: 800,
-          height: 600
-        })
-      
-      win.loadURL(pdfPath)
+          height: 600,
+        });
+
+        win.loadURL(pdfPath);
       });
     })
     .catch((error) => {

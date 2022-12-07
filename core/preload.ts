@@ -1,5 +1,5 @@
 import { Student, User } from "@prisma/client";
-import { IpcRenderer, contextBridge, ipcRenderer } from "electron";
+import {  contextBridge, ipcRenderer } from "electron";
 import os = require("os");
 import channels from "./lib/constant";
 
